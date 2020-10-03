@@ -32,6 +32,7 @@ class Post(models.Model):
         verbose_name = _('post')
         verbose_name_plural = _('posts')
         ordering = ['-post_date']
+        db_table = 'post'
 
     def __str__(self):
         return self.title
@@ -74,6 +75,7 @@ class Comment(models.Model):
         verbose_name = _('comment')
         verbose_name_plural = _('comments')
         ordering = ['post_date']
+        db_table = 'commit'
 
 
 post_save.connect(save_comment, sender=Comment)
